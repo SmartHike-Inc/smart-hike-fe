@@ -8,7 +8,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalService {
     /**
      * Constructor
-     * @param {NgbModal} _ngbModal
+     * @param NgbModal _ngbModal
+     * Constructor of the class
      */
     constructor(private _ngbModal: NgbModal) {}
 
@@ -16,10 +17,12 @@ export class ModalService {
      * openModal
      *
      * open modal
-     * @param {Type<any> | any} component
-     * @param {{ariaLabelledBy?: string; backdrop?: boolean | "static"; beforeDismiss?: () => (boolean | Promise<boolean>); centered?: boolean; container?: string; injector?: Injector; keyboard?: boolean; size?: "sm" | "lg" | any; windowClass?: string; backdropClass?: string}} options
-     * @param options
-     * @returns {NgbModalRef}
+     * @param Type<any> | any} component
+     * @param options<any>
+     * @param ariaLabelledBy?: string; backdrop?: boolean | "static"; beforeDismiss?: () => (boolean | Promise<boolean>)
+     * ; centered?: boolean; container?: string; injector?: Injector; keyboard?: boolean; size?: "sm" | "lg" | any;
+     * windowClass?: string; backdropClass?: string options
+     * @returns NgbModalRef
      */
     openModal(
         component: Type<any> | any,

@@ -1,5 +1,5 @@
 import {AbstractControl} from '@angular/forms';
-import {BoardInterface} from "../interfaces/board.interface";
+import {BoardInterface} from '../interfaces/board.interface';
 
 export  function classes(control: AbstractControl) {
   return {

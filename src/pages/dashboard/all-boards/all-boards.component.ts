@@ -2,12 +2,10 @@ import {AfterViewInit, ChangeDetectorRef, Component, ComponentRef, OnDestroy, On
 import {BoardsService} from '../../../system/services/boards.service';
 import {select} from '@angular-redux/store';
 import {Observable, Subscription} from 'rxjs';
-import {Subject} from 'rxjs/internal/Subject';
 import {BoardInterface} from '../../../system/interfaces/board.interface';
 import {ModalService} from '../../../system/services/modal.service';
 import {NewBoardComponent} from './modal/new-board.component';
-import { DataTableDirective } from 'angular-datatables';
-import {DataTableComponent} from "../../../components/data-table/data-table.component";
+import {DataTableComponent} from '../../../components/data-table/data-table.component';
 
 @Component({
   selector: 'sh-all-boards',

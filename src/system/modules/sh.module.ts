@@ -11,7 +11,7 @@ import { INITIAL_STATE, reducerApp} from '../state/store/store';
 import {SharedModule} from './shared.module';
 import {ModalService} from '../services/modal.service';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
-import {BoardsService} from "../services/boards.service";
+import {BoardsService} from '../services/boards.service';
 
 @NgModule({
   declarations: [
