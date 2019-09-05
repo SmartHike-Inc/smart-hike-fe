@@ -1,0 +1,66 @@
+.sh-card-view {
+  background-color: $white;
+  border: solid 1px $grey-border;
+  padding: 10px;
+  color: $indigo;
+}
+
+.br-none {
+  border-radius: 0 $im;
+}
+
+.th-lg {
+  min-width: 9rem;
+}
+
+.th-sm {
+  min-width: 6rem;
+}
+
+.dataTables_wrapper.no-footer {
+  font-size: $nm-size;
+  table {
+    th {
+      border-bottom-color: #dee2e6;
+    }
+  }
+  table.no-footer {
+    border-bottom-color: #dee2e6;
+  }
+  input, select {
+    padding: .2rem;
+    font-size: $nm-size;
+    line-height: 1.5;
+    color: $indigo;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s;
+    &:focus, &:active {
+      outline: 0;
+      box-shadow: none;
+      border-color: $blue;
+    }
+  }
+  .dataTables_paginate {
+    .paginate_button {
+      padding: 5px;
+      border: none;
+      font-size: $sm-size;
+    }
+    .paginate_button.current {
+      background: none;
+      background-color: $blue;
+      color: $white $im;
+      padding: 2px 8px;
+    }
+  }
+  .dataTables_info {
+    font-size: $sm-size;
+  }
+}
+
+.close {
+  cursor: pointer;
+}

@@ -1,0 +1,40 @@
+.sh-dashboard {
+  display: flex;
+  background-color: $grey-3;
+  overflow-x: hidden;
+  .expanded  {
+    transition: all .2s;
+  }
+  &__main-page {
+    transition: all .2s;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: $grey-3;
+
+    &--header {
+      border-bottom: solid 1px $grey-border;
+      padding: 15px;
+      .routes {
+        margin-top: 12px;
+        justify-content: center;
+        cursor: pointer;
+        font-size: $nm-size;
+        a {
+          color: $blue-2;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        a.selected {
+          color: $grey;
+        }
+      }
+    }
+
+    &--body {
+      padding: 20px;
+    }
+  }
+}

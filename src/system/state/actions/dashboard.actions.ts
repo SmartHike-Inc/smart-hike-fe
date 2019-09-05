@@ -1,0 +1,9 @@
+export const DASHBOARD = {
+  CHANGE_SIDENAV: 'CHANGE_SIDENAV',
+};
+
+export const BOARDS = {
+  ADD: 'ADD_BOARDS',
+  UPDATE: 'UPDATE_BOARDS',
+  REMOVE: 'REMOVE_BOARDS'
+};

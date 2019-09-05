@@ -1,0 +1,31 @@
+@function rhythm($value, $type: 'default') {
+  @return var(--rhythm-#{$type}) * $value;
+}
+
+@function color($color, $base: 'base') {
+  @return var(--color-#{$color}-#{$base});
+}
+
+@function k($constant) {
+  @return var(--k-#{$constant});
+}
+
+@function font($element, $value: '') {
+  @return var(--font-#{$element}-#{$value});
+}
+
+@function fontFamily($value) {
+  @return font('family', $value);
+}
+
+@function fontSize($value) {
+  @return font('size', $value);
+}
+
+@function fontWeight($value) {
+  @return font('weight', $value);
+}
+
+@function im() {
+  @return !important;
+}

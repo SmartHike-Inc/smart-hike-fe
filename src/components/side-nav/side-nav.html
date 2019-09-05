@@ -1,0 +1,26 @@
+<div class="sh-side-nav" [ngClass]="sideBarClasses">
+  <!--Options-->
+  <div class="sh-side-nav__top">
+    <!--home-->
+    <div
+      class="sh-side-nav__icon text-white d-flex justify-content-center align-items-center"
+      [class.active]="type === 'home'"
+      title="Home">
+      <div class="d-flex align-items-center">
+        <span class="mr-4 d-inline-block sh-side-nav__text">Home</span>
+        <fa-icon class="icon home" [icon]="['fas', 'home']"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <!--expand button-->
+  <div class="sh-side-nav__bottom">
+    <div
+      class="sh-side-nav__icon bottom-icon text-white d-flex justify-content-center align-items-center"
+      [title]="expanded ? 'collapse' : 'expand'">
+      <div (click)="toggle()" class="d-flex align-items-center">
+        <span class="mr-4 d-inline-block sh-side-nav__text text">collapse</span>
+        <fa-icon class="icon" [icon]="expanded ? ['fas', 'angle-double-left'] : ['fas', 'angle-double-right']"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

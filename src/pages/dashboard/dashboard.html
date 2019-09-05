@@ -1,0 +1,18 @@
+<div class="sh-dashboard">
+
+  <div class="sh-dashboard__side-nav">
+    <sh-side-nav></sh-side-nav>
+  </div>
+  <div class="sh-dashboard__main-page" [class.expanded]="sidenav === 'expanded'">
+    <div class="sh-dashboard__main-page--header sh-card-view">
+        <sh-logo [data]="logoData"></sh-logo>
+      <div class="routes">
+        <a routerLink="/">Home</a> /
+        <a routerLink="/dashboard" routerLinkActive="selected">Dashboard</a>
+      </div>
+    </div>
+    <div class="sh-dashboard__main-page--body mt-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

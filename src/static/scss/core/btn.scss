@@ -1,0 +1,51 @@
+.sh-btn {
+  padding: 5px 15px $im;
+  &:hover, &:focus, &:active {
+    box-shadow: none $im;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &--light {
+    color: $text-light $im;
+    background-color: $bg-light $im;
+    &:hover {
+      background-color: $bg-light-hover $im;
+    }
+  }
+
+  &--red {
+    color: $white $im;
+    background-color: $red $im;
+  }
+
+  &--green {
+    color: $white $im;
+    background-color: $green $im;
+  }
+
+  &--blue {
+    color: $white $im;
+    background-color: $blue $im;
+  }
+
+  &--small {
+    font-size: $sm-size $im;
+  }
+
+  &--xsmall {
+    font-size: $xs-size $im;
+  }
+
+  &--disabled {
+    cursor: not-allowed !important;
+    background-color: $grey $im;
+    color: $indigo $im;
+    &:hover {
+      color: $indigo;
+      opacity: 0.9;
+    }
+  }
+
+}

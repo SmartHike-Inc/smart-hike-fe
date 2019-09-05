@@ -1,0 +1,20 @@
+<div class="sh-boards">
+  <div class="sh-card-view mb-4">
+    <div class="sh-boards__header mb-4 d-lg-flex justify-content-lg-between">
+      <div class="text">
+        Boards
+      </div>
+      <div class="button">
+        <button class="sh-btn sh-btn--blue btn" (click)="newBoard()">
+          <fa-icon [icon]="['fas', 'plus']"></fa-icon> &nbsp;
+          New
+        </button>
+      </div>
+    </div>
+    <div class="sh-boards__body">
+      <div class="table-responsive" *ngIf="showTable">
+        <sh-data-table #boardsTable [table]="dtData" (changed)="refresh($event)"></sh-data-table>
+      </div>
+    </div>
+  </div>
+</div>

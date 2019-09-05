@@ -1,0 +1,37 @@
+<div class="sh-new-board">
+  <div class="modal-header">
+    <div>
+      New Board &nbsp; <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+    </div>
+    <div class="close" (click)="closeModal()">&times;</div>
+  </div>
+  <div class="modal-body">
+    <form class="" [formGroup]="newBoardForm">
+      <div class="form-group">
+        <label for="board_id" [class.text-danger]="board_id.touched && board_id.invalid">
+          Board Id <span class="text-danger">*</span>
+        </label>
+        <input type="text" class="form-control"
+               [class.is-invalid]="board_id.invalid && board_id.touched"
+               (keydown.enter)="$event.stopPropagation()"
+               id="board_id" formControlName="board_id">
+        <div *ngIf="board_id.errors">
+          <div *ngIf="board_id.errors.required && board_id.touched">
+            <span class="text-red text-small">This field is required</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="board_name">Board Name</label>
+        <input type="text" class="form-control" id="board_name" formControlName="board_name"
+               (keydown.enter)="$event.stopPropagation()">
+      </div>
+      <div class="button mt-3">
+        <button type="button"
+                class="sh-btn btn btn-block sh-btn--blue"
+                [class.sh-btn--disabled]="newBoardForm.invalid"
+                (click)="addBoard()">Add</button>
+      </div>
+    </form>
+  </div>
+</div>

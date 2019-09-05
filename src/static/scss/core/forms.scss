@@ -1,0 +1,21 @@
+label {
+  font-size: $sm-size;
+  font-weight: bolder;
+}
+
+.form-control {
+  &:focus {
+    box-shadow: none !important;
+    border-color: $blue !important;
+  }
+}
+
+.is-invalid {
+  &:focus {
+    border-color: $red !important;
+    box-shadow: none !important;
+  }
+}
+
+
+
