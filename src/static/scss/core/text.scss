@@ -1,0 +1,9 @@
+.text {
+  &-red {
+    color: red;
+  }
+
+  &-small {
+    font-size: $sm-size;
+  }
+}

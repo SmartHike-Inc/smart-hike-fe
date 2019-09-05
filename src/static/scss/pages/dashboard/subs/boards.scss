@@ -1,0 +1,27 @@
+.sh-boards {
+  &__header {
+    .button {
+      button {
+        font-size: $nm-size;
+        padding: 3px 15px $im;
+      }
+    }
+  }
+  &__body {
+    table {
+      th, td {
+        font-size: $nm-size;
+      }
+      thead {
+      }
+      tbody {
+        tr {
+          cursor: pointer;
+        }
+        button {
+          min-width: 75px;
+        }
+      }
+    }
+  }
+}

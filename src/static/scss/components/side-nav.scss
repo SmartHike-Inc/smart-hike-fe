@@ -1,0 +1,82 @@
+.sh-side-nav {
+  box-shadow: 0 0 32px rgba(136, 152, 170, 0.15);
+  border-right: solid 1px $grey-border;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60px;
+  overflow-x: hidden;
+  background-color: $white;
+  height: 100vh;
+  z-index: 10;
+  padding: 0;
+  &__icon {
+    margin: 1rem auto;
+    padding: 0.3rem;
+    cursor: pointer;
+    &:hover {
+      background-color: $bg-light;
+    }
+    @media (max-width: 400px) {
+      margin: 1rem auto;
+    }
+    .icon {
+      color: $white;
+      font-size: 26px;
+      margin-right: 20px;
+      @media (max-width: 400px) {
+        font-size: 20px;
+      }
+    }
+  }
+  .active {
+    background-color: $bg-light-hover !important;
+  }
+  &__text {
+    font-size: 20px;
+    width: 125px;
+    text-align: right;
+  }
+  &__bottom {
+    .bottom-icon  {
+      margin: 0 auto !important;
+      border-top: solid 1px grey;
+      background-color: $red;
+      .text {
+        font-size: 22px;
+      }
+    }
+  }
+  .add {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    .icon {
+      font-size: 18px;
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    color: #aaaaaa !important;
+  }
+}
+.sh-side-nav.expanded {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 200px;
+  transition: all .2s;
+}
+.sh-side-nav.collapsed  {
+  position: relative;
+  width: 60px;
+  transition: all .2s;
+  &__icon {
+    width: 35px;
+    height: 35px;
+  }
+  .sh-side-nav__text {
+    width: 0;
+    overflow: hidden;
+  }
+}

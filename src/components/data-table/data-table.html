@@ -1,0 +1,62 @@
+<div>
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th class="th-lg" *ngFor="let head of table?.thead">
+        {{head}}
+      </th>
+      <!--    <th class="th-lg">-->
+      <!--      Board Id-->
+      <!--    </th>-->
+      <!--    <th class="th-lg">-->
+      <!--      Board Name-->
+      <!--    </th>-->
+      <!--    <th class="th-lg">-->
+      <!--      Ports-->
+      <!--    </th>-->
+      <!--    <th class="th-lg">-->
+      <!--      Status-->
+      <!--    </th>-->
+      <!--    <th class="th-lg">-->
+      <!--      Added at-->
+      <!--    </th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let body of table?.tbody">
+      <td *ngFor="let data of body?.data">
+        <div *ngIf="!data.type">
+          {{data}}
+        </div>
+        <div *ngIf="data?.type === 'image'">
+          <img [src]="data?.src" [alt]="data?.alt" [class]="data?.classes">
+        </div>
+        <div *ngIf="data?.type === 'button'">
+          <button [class]="'btn sh-btn sh-btn--small br-none ' + data?.classes"
+                  [class.sh-btn--red]="data.content === 'inactive'"
+                  [class.sh-btn--green]="data.content === 'active'">
+            {{data.content}}
+          </button>
+        </div>
+        <div *ngIf="data?.type === 'date'">
+          {{data.date | date:'medium'}}
+        </div>
+      </td>
+
+      <!--      <td>-->
+      <!--        {{body.ports}}-->
+      <!--      </td>-->
+      <!--      <td>-->
+      <!--        <button class="btn sh-btn sh-btn&#45;&#45;small br-none"-->
+      <!--                [class.sh-btn&#45;&#45;red]="body.status === 'inactive'"-->
+      <!--                [class.sh-btn&#45;&#45;green]="body.status === 'active'">-->
+      <!--          {{body.status}}-->
+      <!--        </button>-->
+      <!--      </td>-->
+      <!--      <td>-->
+      <!--        {{board.date | date:'medium'}}-->
+      <!--      </td>-->
+    </tr>
+    </tbody>
+  </table>
+</div>
