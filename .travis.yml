@@ -3,6 +3,8 @@ node_js:
   - "11"
 dist: trusty
 sudo: required
+notifications:
+  slack: smarthikeinc:5No8nUlnuaXrlTL4vkAI32Kq
 branches:
   only:
     - staging
