@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {BoardsService} from "../../../../system/services/boards.service";
+import {BoardsService} from '../../../../system/services/boards.service';
 
 @Component({
   selector: 'sh-boards',

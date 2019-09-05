@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select} from '@angular-redux/store';
 import {Observable, Subscription} from 'rxjs';
 import {DashboardInterface} from '../../system/state/interfaces/dashboard.interface';
-import {LogoInterface} from "../../system/interfaces/logo.interface";
+import {LogoInterface} from '../../system/interfaces/logo.interface';
 
 @Component({
   selector: 'sh-dashboard',
