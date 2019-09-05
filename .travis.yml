@@ -11,6 +11,10 @@ before_script:
   - npm install
   - ng lint
 script:
-  - ng build --prod
+  -  'if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then
+        ng build --prod ;
+      fi'
 after_success:
-  - firebase deploy --token=${FIREBASE_API_TOKEN}
+  - 'if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then
+      firebase deploy --token=${FIREBASE_API_TOKEN} ;
+    fi'
