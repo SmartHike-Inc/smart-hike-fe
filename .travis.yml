@@ -8,12 +8,9 @@ branches:
     - staging
 before_script:
   - npm install -g @angular/cli
-script:
   - npm install
   - ng lint
+script:
   - ng build --prod
-deploy:
-  skip_cleanup: true
-  provider: firebase
-  token:
-    secure: ""
+after_success:
+  - firebase deploy --token=${FIREBASE_API_TOKEN}
