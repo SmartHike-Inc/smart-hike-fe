@@ -4,4 +4,5 @@ export interface DashboardInterface {
   sidenav: string;
   boards: BoardInterface[];
   boardDataTable: any;
+  selectedBoard: BoardInterface;
 }

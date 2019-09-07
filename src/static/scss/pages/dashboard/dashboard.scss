@@ -29,6 +29,8 @@
         }
         a.selected {
           color: $grey;
+          pointer-events: none;
+          cursor: not-allowed;
         }
       }
     }

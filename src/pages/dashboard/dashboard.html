@@ -8,7 +8,8 @@
         <sh-logo [data]="logoData"></sh-logo>
       <div class="routes">
         <a routerLink="/">Home</a> /
-        <a routerLink="/dashboard" routerLinkActive="selected">Dashboard</a>
+        <a routerLink="/dashboard" [class.selected]="_route === 'dashboard'">Dashboard</a>
+        <a [routerLink]="['/dashboard']" class="selected" *ngIf="_route !== 'dashboard'"> / {{_route}}</a>
       </div>
     </div>
     <div class="sh-dashboard__main-page--body mt-3">

@@ -1,11 +1,14 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ComponentRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {BoardsService} from '../../../system/services/boards.service';
-import {select} from '@angular-redux/store';
+import {NgRedux, select} from '@angular-redux/store';
 import {Observable, Subscription} from 'rxjs';
 import {BoardInterface} from '../../../system/interfaces/board.interface';
 import {ModalService} from '../../../system/services/modal.service';
 import {NewBoardComponent} from './modal/new-board.component';
 import {DataTableComponent} from '../../../components/data-table/data-table.component';
+import {Router} from '@angular/router';
+import {IAppState} from '../../../system/state/interfaces/appState.interface';
+import {SELECTED_BOARD} from '../../../system/state/actions/actions';
 
 @Component({
   selector: 'sh-all-boards',
@@ -17,7 +20,6 @@ export class AllBoardsComponent implements OnInit, OnDestroy, AfterViewInit {
   @select(['dashboard', 'boards']) boards$: Observable<BoardInterface>;
   @select(['dashboard', 'boardDataTable']) dtData$: Observable<BoardInterface>;
   $dtData$: Subscription;
-  $boards$: Subscription;
   boards;
   showTable = true;
   dtData = {
@@ -27,12 +29,14 @@ export class AllBoardsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     constructor(private _boardsService: BoardsService,
                 private _modal: ModalService,
-                private _cdr: ChangeDetectorRef) {
+                private _cdr: ChangeDetectorRef,
+                private _router: Router,
+                private _ngRedux: NgRedux<IAppState>) {
     }
 
   ngOnInit() {
     this.$dtData$ = this.dtData$.subscribe((data: any) => {
-      this.dtData = data;
+      this.dtData = {...data, ...{rowClick: this.selectBoard}};
     });
     this.getBoards();
   }
@@ -40,7 +44,6 @@ export class AllBoardsComponent implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
       this._cdr.detectChanges();
   }
-
 
   getBoards() {
       this._boardsService.getBoards();
@@ -59,8 +62,14 @@ export class AllBoardsComponent implements OnInit, OnDestroy, AfterViewInit {
       }
   }
 
+  selectBoard = (event, boardKey) => {
+      const _board = this.dtData.tbody.find((board) => board.row === boardKey);
+      const affix = _board.data[1] ? _board.data[1] : _board.data[0];
+      this._ngRedux.dispatch({type: SELECTED_BOARD.ADD, selectedBoard: _board});
+      this._router.navigate(['/dashboard', `${affix}`]);
+  }
+
   ngOnDestroy() {
-      this.$boards$.unsubscribe();
       this.$dtData$.unsubscribe();
   }
 }

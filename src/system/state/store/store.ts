@@ -1,5 +1,5 @@
 import {IAppState} from '../interfaces/appState.interface';
-import {BOARDS, DASHBOARD, SITE} from '../actions/actions';
+import {BOARDS, DASHBOARD, SELECTED_BOARD, SITE} from '../actions/actions';
 import {setTableData, updateArray} from '../../utilities/functions';
 
 export const INITIAL_STATE: IAppState = {
@@ -10,6 +10,10 @@ export const INITIAL_STATE: IAppState = {
     boardDataTable: {
       thead: ['Board Id', 'Board Name', 'Ports', 'Status', 'Added at'],
       tbody: []
+    },
+    selectedBoard: {
+      name: '',
+      id: ''
     }
   }
 };
@@ -43,6 +47,11 @@ export function reducerApp(state, action) {
       dashboard = {...state.dashboard, ...{
           boards: updatedBoard,
           boardDataTable: dtData
+        }};
+      return Object.assign({}, state, {dashboard});
+    case SELECTED_BOARD.ADD:
+      dashboard = {...state.dashboard, ...{
+          selectedBoard: action.selectedBoard,
         }};
       return Object.assign({}, state, {dashboard});
   }
