@@ -7,3 +7,7 @@ export const BOARDS = {
   UPDATE: 'UPDATE_BOARDS',
   REMOVE: 'REMOVE_BOARDS'
 };
+
+export const SELECTED_BOARD = {
+  ADD: 'ADD_SELECTED_BOARD'
+};

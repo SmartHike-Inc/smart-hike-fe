@@ -5,25 +5,10 @@
       <th class="th-lg" *ngFor="let head of table?.thead">
         {{head}}
       </th>
-      <!--    <th class="th-lg">-->
-      <!--      Board Id-->
-      <!--    </th>-->
-      <!--    <th class="th-lg">-->
-      <!--      Board Name-->
-      <!--    </th>-->
-      <!--    <th class="th-lg">-->
-      <!--      Ports-->
-      <!--    </th>-->
-      <!--    <th class="th-lg">-->
-      <!--      Status-->
-      <!--    </th>-->
-      <!--    <th class="th-lg">-->
-      <!--      Added at-->
-      <!--    </th>-->
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let body of table?.tbody">
+    <tr *ngFor="let body of table?.tbody" (click)="table.rowClick ? table.rowClick($event, body.row) : ''">
       <td *ngFor="let data of body?.data">
         <div *ngIf="!data.type">
           {{data}}
@@ -42,20 +27,6 @@
           {{data.date | date:'medium'}}
         </div>
       </td>
-
-      <!--      <td>-->
-      <!--        {{body.ports}}-->
-      <!--      </td>-->
-      <!--      <td>-->
-      <!--        <button class="btn sh-btn sh-btn&#45;&#45;small br-none"-->
-      <!--                [class.sh-btn&#45;&#45;red]="body.status === 'inactive'"-->
-      <!--                [class.sh-btn&#45;&#45;green]="body.status === 'active'">-->
-      <!--          {{body.status}}-->
-      <!--        </button>-->
-      <!--      </td>-->
-      <!--      <td>-->
-      <!--        {{board.date | date:'medium'}}-->
-      <!--      </td>-->
     </tr>
     </tbody>
   </table>

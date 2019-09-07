@@ -28,6 +28,7 @@ export class DataTableComponent implements AfterViewInit, OnChanges {
   _dataDefaults = {
     thead: [],
     tbody: [],
+    rowClick: () => {}
   };
 
   constructor(private _cdr: ChangeDetectorRef) {
